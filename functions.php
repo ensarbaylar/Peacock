@@ -26,6 +26,8 @@ function peacock_load_scripts()
 	wp_enqueue_script( 'jquery' );
 	/* Load Bootstrap JavaScript */
 	wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ) );
+	/* Load Main JavaScript */
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 }
 
 add_action( 'comment_form_before', 'peacock_enqueue_comment_reply_script' );
@@ -82,3 +84,127 @@ function peacock_comments_number( $count )
 		return $count;
 	}
 }
+
+if( ! function_exists( 'peacock_header' ) ) :
+/*
+ * Add the fullscreen Image To the top of the page
+ */
+function peacock_header() 
+{	
+	if(is_single()) { ?>
+	
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+	<?php
+		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	?>
+    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1><?php single_post_title(); ?></h1>
+			<?php if ( function_exists( 'the_subtitle' ) ) {
+				the_subtitle( '<h2 class="subheading">', '</h2>' );
+			} ?>
+                        <span class="meta"><?php peacock_posted_on(); ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<?php } elseif(is_page()) { ?>
+	
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+	<?php
+		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	?>
+    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><?php single_post_title(); ?></h1>
+                        <hr class="small">
+			<?php if ( function_exists( 'the_subtitle' ) ) {
+				the_subtitle( '<span class="subheading">', '</span>' );
+			} ?>
+                    </div>
+					<!-- /.site-heading -->
+                </div>
+				<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
+            </div>
+			<!-- /.row -->
+        </div>
+		<!-- /.container -->
+    </header>
+	
+	<?php } elseif(is_search()) { ?>
+	
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
+	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
+	<?php } else { ?>
+	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
+	<?php } ?>
+    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><?php esc_html_e( 'Search Results', 'peacock' ); ?></h1>
+                        <hr class="small">
+                        <span class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></span>
+                    </div>
+		    <!-- /.site-heading -->
+                </div>
+		<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
+            </div>
+	<!-- /.row -->
+        </div>
+	<!-- /.container -->
+    </header>
+	
+	<?php } else { ?>
+	
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
+	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
+	<?php } else { ?>
+	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
+	<?php } ?>
+    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+			<?php if (get_theme_mod('peacock_homemain_title') !='') { ?>
+			<h1 class="homeintro"><?php echo get_theme_mod( 'peacock_homemain_title' ); ?></h1>
+			<?php } else { ?>
+                        <h1><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h1>
+			<?php } ?>
+                        <hr class="small">
+			<?php if (get_theme_mod('peacock_homemain_subtitle') !='') { ?>
+                        <span class="subheading"><?php echo get_theme_mod( 'peacock_homemain_subtitle' ); ?></span>
+			<?php } else { ?>
+                        <span class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></span>
+			<?php } ?>
+                    </div>
+		    <!-- /.site-heading -->
+                </div>
+		<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
+            </div>
+	    <!-- /.row -->
+        </div>
+	<!-- /.container -->
+    </header>
+
+	<?php } ?>
+	
+<?php 
+}
+endif;
