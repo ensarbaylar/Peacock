@@ -208,3 +208,42 @@ function peacock_header()
 <?php 
 }
 endif;
+
+function peacock_posted_on() {
+	
+	$author_id;
+	if (is_singular()) {
+		$author_id = get_queried_object()->post_author;
+	}
+	
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		esc_html_x( 'on %s', 'post date', 'cleanblog' ),
+		$time_string
+	);
+
+	$byauthor = sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+		esc_url( get_author_posts_url( get_the_author_meta('ID', $author_id) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'cleanblog' ), get_the_author_meta("display_name", $author_id) ) ),
+		get_the_author_meta("display_name", $author_id)
+	);
+	
+	$byline = sprintf(
+		esc_html_x( 'Posted by %s', 'posted by', 'cleanblog' ), 
+		$byauthor
+	);
+
+	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+
+}

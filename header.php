@@ -20,5 +20,5 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 	</nav>
 </header>
-<div id="container" style="background:#fc0">
+<div id="container">
 	<?php peacock_header(); ?>

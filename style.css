@@ -19,10 +19,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	padding:0;
 	border:0;
 	margin:0;
-	vertical-align:baseline
+	vertical-align:baseline;
 }
 body{
-	line-height:1
+	line-height:1;
+	color:rgba(0, 0, 0, 0.8);
 }
 ol,ul{
 	list-style:none
@@ -54,20 +55,34 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 .aligncenter{}
 
 .main-head-wrapper{
-	padding: 150px 0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.main-head-wrapper .container{
+	padding: 150px 0;
+	background: rgba(0,0,0,0.4);
+	width: 100%;
 }
 .main-head-wrapper .cta-header h1{
 	font-size: 25px;
 	color: #fff;
 	text-align: center;
+	font-weight: 700;
 }
 .main-head-wrapper .cta-header .subheading{
 	font-size: 18px;
 	color: #fff;
 	text-align: center;
 	width: 100%;
+	font-weight: 700;
+}
+#content{
+	width: 100%;
+	max-width: 700px;
+	margin: auto;
 }
