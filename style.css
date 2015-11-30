@@ -53,10 +53,21 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 .alignleft{}
 .aligncenter{}
 
-.main-hero-header{
+.main-head-wrapper{
 	padding: 150px 0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+.main-head-wrapper .cta-header h1{
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+}
+.main-head-wrapper .cta-header .subheading{
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
 }

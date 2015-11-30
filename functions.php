@@ -98,11 +98,11 @@ function peacock_header()
 	<?php
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 	?>
-    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
+    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
+                    <div class="post-heading cta-header">
                         <h1><?php single_post_title(); ?></h1>
 			<?php if ( function_exists( 'the_subtitle' ) ) {
 				the_subtitle( '<h2 class="subheading">', '</h2>' );
@@ -121,11 +121,11 @@ function peacock_header()
 	<?php
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 	?>
-    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
+    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
+                    <div class="page-heading cta-header">
                         <h1><?php single_post_title(); ?></h1>
                         <hr class="small">
 			<?php if ( function_exists( 'the_subtitle' ) ) {
@@ -150,11 +150,11 @@ function peacock_header()
 	<?php } else { ?>
 	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
 	<?php } ?>
-    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
+    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
+                    <div class="site-heading cta-header">
                         <h1><?php esc_html_e( 'Search Results', 'peacock' ); ?></h1>
                         <hr class="small">
                         <span class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></span>
@@ -177,11 +177,11 @@ function peacock_header()
 	<?php } else { ?>
 	<?php $headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg'; ?>
 	<?php } ?>
-    <header class="main-hero-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
+    <header class="main-head-wrapper" style="background-color: #dedede; background-image: url('<?php echo $headerimg; ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
+                    <div class="site-heading cta-header">
 			<?php if (get_theme_mod('peacock_homemain_title') !='') { ?>
 			<h1 class="homeintro"><?php echo get_theme_mod( 'peacock_homemain_title' ); ?></h1>
 			<?php } else { ?>
