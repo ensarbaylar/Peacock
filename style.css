@@ -52,3 +52,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 .alignright{}
 .alignleft{}
 .aligncenter{}
+
+.main-hero-header{
+	padding: 150px 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

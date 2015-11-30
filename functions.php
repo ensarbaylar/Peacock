@@ -175,9 +175,9 @@ function peacock_header()
 	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
 	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
 	<?php } else { ?>
-	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
+	<?php $headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg'; ?>
 	<?php } ?>
-    <header class="intro-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
+    <header class="main-hero-header" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
