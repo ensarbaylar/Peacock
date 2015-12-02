@@ -98,6 +98,9 @@ function peacock_header()
 	<?php
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 	?>
+	<section>
+		<p class="meta"><?php peacock_posted_on(); ?></p>
+	</section>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
         <div class="container">
             <div class="row">
@@ -107,7 +110,6 @@ function peacock_header()
 			<?php if ( function_exists( 'the_subtitle' ) ) {
 				the_subtitle( '<h2 class="subheading">', '</h2>' );
 			} ?>
-                        <span class="meta"><?php peacock_posted_on(); ?></span>
                     </div>
                 </div>
             </div>
@@ -229,21 +231,22 @@ function peacock_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'on %s', 'post date', 'cleanblog' ),
+		esc_html_x( 'on %s', 'post date', 'peacock' ),
 		$time_string
 	);
 
-	$byauthor = sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+	$byauthor = sprintf('<a class="author-header-url" href="%1$s" title="%2$s" rel="author"><span class="author vcard">%3$s</span></a>',
 		esc_url( get_author_posts_url( get_the_author_meta('ID', $author_id) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'cleanblog' ), get_the_author_meta("display_name", $author_id) ) ),
+		esc_attr( get_the_author_meta("display_name", $author_id) ),
 		get_the_author_meta("display_name", $author_id)
 	);
-	
-	$byline = sprintf(
-		esc_html_x( 'Posted by %s', 'posted by', 'cleanblog' ), 
-		$byauthor
+
+	$author_avatar = sprintf('<a class="author-header-avatar" href="%1$s" title="%2$s" rel="author">%3$s</a>',
+		esc_url( get_author_posts_url( get_the_author_meta('ID', $author_id) ) ),
+		esc_attr( get_the_author_meta("display_name", $author_id) ),
+		get_avatar( $author_id )
 	);
 
-	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+	echo '<section class="site-container"><div class="header-blocks">' . $author_avatar . '</div><div class="header-blocks">' .  $byauthor . '<span class="posted-on">' . $posted_on . '</span></div></section><div class="clearfix"></div>'; // WPCS: XSS OK.
 
 }

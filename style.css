@@ -81,8 +81,39 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	width: 100%;
 	font-weight: 700;
 }
-#content{
+#content, .site-container{
 	width: 100%;
 	max-width: 700px;
 	margin: auto;
+}
+.site-container{
+	padding: 0;
+}
+.header-blocks{
+	display: inline-block;
+	padding: 0 5px;
+	margin: 0;
+	float: left;
+	height: 100%;
+}
+.author-header-avatar img{
+	width: 50px;
+	height: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.author-header-url{
+	height: 25px;
+	width: 100%;
+	display: block;
+	padding: 0;
+	padding-top: 5px;
+	margin: 0;
+}
+.posted-on{
+	height: 25px;
+	width: 100%;
+	display: block;
+	padding: 0;
+	margin: 0;
 }
