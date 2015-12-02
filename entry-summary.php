@@ -2,9 +2,8 @@
 	<section>
 		<p class="meta"><?php peacock_posted_on(); ?></p>
 	</section>
-	<?php
+	<?php if ( has_post_thumbnail() ) :
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-		if ( $feat_image != "" ):
 	?>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
     <header class="summary-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">

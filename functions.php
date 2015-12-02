@@ -30,6 +30,12 @@ function peacock_load_scripts()
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 }
 
+add_action('wp_print_styles', 'load_fonts');
+function load_fonts() {
+	wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,700');
+	wp_enqueue_style( 'googleFonts');
+}
+
 add_action( 'comment_form_before', 'peacock_enqueue_comment_reply_script' );
 function peacock_enqueue_comment_reply_script()
 {
