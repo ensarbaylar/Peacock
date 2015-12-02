@@ -63,6 +63,50 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
     background-position: center;
     margin-bottom: 40px;
 }
+.main-head-wrapper .container{
+	padding: 150px 0;
+	background: rgba(0,0,0,0.4);
+	width: 100%;
+}
+.main-head-wrapper .cta-header h1{
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+	font-weight: 700;
+}
+.main-head-wrapper .cta-header .subheading{
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	font-weight: 700;
+}
+.summary-head-wrapper{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+.summary-head-wrapper .container{
+	padding: 100px 0;
+	background: rgba(0,0,0,0.4);
+	width: 100%;
+}
+.summary-head-wrapper .cta-header h2{
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+	font-weight: 700;
+}
+.summary-head-wrapper .cta-header .subheading{
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	font-weight: 700;
+}
 .peacock-search-bar .form-control{
 	border-left:none;
 	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
@@ -91,24 +135,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
     box-shadow:none;
     outline: none;
     border:1px solid #ccc;
-}
-.main-head-wrapper .container{
-	padding: 150px 0;
-	background: rgba(0,0,0,0.4);
-	width: 100%;
-}
-.main-head-wrapper .cta-header h1{
-	font-size: 25px;
-	color: #fff;
-	text-align: center;
-	font-weight: 700;
-}
-.main-head-wrapper .cta-header .subheading{
-	font-size: 18px;
-	color: #fff;
-	text-align: center;
-	width: 100%;
-	font-weight: 700;
 }
 .site-container{
 	width: 100%;
@@ -142,4 +168,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	display: block;
 	padding: 0;
 	margin: 0;
+}
+.entry-summary{
+	padding:15px 0;
 }
