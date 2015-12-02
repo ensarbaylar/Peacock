@@ -53,7 +53,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 .alignright{}
 .alignleft{}
 .aligncenter{}
-
 .main-head-wrapper{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -62,6 +61,36 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    margin-bottom: 40px;
+}
+.peacock-search-bar .form-control{
+	border-left:none;
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+	-webkit-border-radius: 0 20px 20px 0;
+	border-radius: 0 20px 20px 0;
+	height: 30px;
+}
+.navbar-default{
+	background: #fff;
+	border: none;
+}
+.peacock-search-bar .form-control:hover, .peacock-search-bar .form-control:focus, .peacock-search-bar .form-control:active{
+	border:1px solid #ccc;
+	border-left:none;
+}
+.peacock-search-bar .btn{
+	-webkit-border-radius: 20px  0 0 20px;
+	border-radius: 20px  0 0 20px;
+	height: 30px;
+}
+.peacock-search-bar .btn:hover, .peacock-search-bar .btn:focus, .peacock-search-bar .btn:active{
+	background: #fff;
+    box-shadow:none;
+    outline: none;
+    border:1px solid #ccc;
 }
 .main-head-wrapper .container{
 	padding: 150px 0;
@@ -81,13 +110,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	width: 100%;
 	font-weight: 700;
 }
-#content, .site-container{
+.site-container{
 	width: 100%;
 	max-width: 700px;
-	margin: auto;
-}
-.site-container{
 	padding: 0;
+	margin: auto;
 }
 .header-blocks{
 	display: inline-block;
@@ -104,8 +131,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 }
 .author-header-url{
 	height: 25px;
-	width: 100%;
-	display: block;
+	display: inline-block;
 	padding: 0;
 	padding-top: 5px;
 	margin: 0;

@@ -9,16 +9,39 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 <header id="header" role="banner">
-	<section id="branding">
-		<div id="site-title"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'peacock' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
-		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-	</section>
-	<nav id="menu" role="navigation">
-		<div id="search">
-		<?php get_search_form(); ?>
-		</div>
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-	</nav>
+	<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"><?php esc_html_e( 'Toggle Navigation', 'cleanblog' ); ?></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				<?php if ( is_front_page() && is_home() ) : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
+				<?php else : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
+				<?php endif; ?>
+            </div>
+            <div id="site-description"><?php bloginfo( 'description' ); ?></div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+			            <div id="search">
+							<?php get_search_form(); ?>
+						</div>
+					</li>
+					<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => '%3$s', 'container' => false ) ); ?>
+				</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 </header>
 <div id="container">
 	<?php peacock_header(); ?>
