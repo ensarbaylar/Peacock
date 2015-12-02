@@ -48,9 +48,11 @@ ol,ul{
 	/*list-style:none*/
 }
 blockquote,q{
+	display: inline-block;
+	background: #dedede;
 	quotes:none;
-	border-left:3px solid #404040;
-	padding-left: 20px;
+	border-left:5px solid #404040;
+	padding: 10px 10px 10px 20px;
 	margin: 10px 0;
 }
 blockquote:before,blockquote:after,q:before,q:after{
@@ -75,6 +77,47 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 .alignright{}
 .alignleft{}
 .aligncenter{}
+
+
+/* Header Start */
+div#site-description{
+	display: inline-block;
+	float: left;
+	padding-top: 18px;
+}
+.navbar-default{
+	background: #fff;
+	border: none;
+}
+.peacock-search-bar{
+	padding-top: 10px;
+}
+.peacock-search-bar .form-control{
+	border-left:none;
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+	-webkit-border-radius: 0 20px 20px 0;
+	border-radius: 0 20px 20px 0;
+	height: 30px;
+}
+.peacock-search-bar .form-control:hover, .peacock-search-bar .form-control:focus, .peacock-search-bar .form-control:active{
+	border:1px solid #ccc;
+	border-left:none;
+}
+.peacock-search-bar .btn{
+	-webkit-border-radius: 20px  0 0 20px;
+	border-radius: 20px  0 0 20px;
+	height: 30px;
+}
+.peacock-search-bar .btn:hover, .peacock-search-bar .btn:focus, .peacock-search-bar .btn:active{
+	background: #fff;
+    box-shadow:none;
+    outline: none;
+    border:1px solid #ccc;
+}
+/* Header End */
 .main-head-wrapper{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -128,35 +171,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	text-align: center;
 	width: 100%;
 	font-weight: 700;
-}
-.peacock-search-bar .form-control{
-	border-left:none;
-	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
-    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
-    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
-    box-shadow: 0 5px 15px rgba(0,0,0,0);
-	-webkit-border-radius: 0 20px 20px 0;
-	border-radius: 0 20px 20px 0;
-	height: 30px;
-}
-.navbar-default{
-	background: #fff;
-	border: none;
-}
-.peacock-search-bar .form-control:hover, .peacock-search-bar .form-control:focus, .peacock-search-bar .form-control:active{
-	border:1px solid #ccc;
-	border-left:none;
-}
-.peacock-search-bar .btn{
-	-webkit-border-radius: 20px  0 0 20px;
-	border-radius: 20px  0 0 20px;
-	height: 30px;
-}
-.peacock-search-bar .btn:hover, .peacock-search-bar .btn:focus, .peacock-search-bar .btn:active{
-	background: #fff;
-    box-shadow:none;
-    outline: none;
-    border:1px solid #ccc;
 }
 .site-container{
 	width: 100%;

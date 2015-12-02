@@ -12,6 +12,9 @@ function peacock_setup()
 	register_nav_menus(
 		array( 'main-menu' => __( 'Main Menu', 'peacock' ) )
 	);
+
+	// Register Custom Navigation Walker
+	require_once('libs/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php');
 }
 
 add_action( 'wp_enqueue_scripts', 'peacock_load_scripts' );

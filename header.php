@@ -26,7 +26,7 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
 				<?php endif; ?>
             </div>
-            <div id="site-description"><?php bloginfo( 'description' ); ?></div>
+            <div class="hidden-xs" id="site-description"><?php bloginfo( 'description' ); ?></div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,16 @@
 							<?php get_search_form(); ?>
 						</div>
 					</li>
-					<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => '%3$s', 'container' => false ) ); ?>
+					<?php wp_nav_menu( 
+						array(
+							'theme_location' => 'main-menu', 
+							'items_wrap' => '%3$s', 
+							'container' => false,
+			                'depth' => 2,
+			                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			                'walker' => new wp_bootstrap_navwalker()
+                		) 
+                	); ?>
 				</ul>
             </div>
             <!-- /.navbar-collapse -->
