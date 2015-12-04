@@ -257,6 +257,7 @@ div#site-description{
     background-attachment: fixed;
     background-position: center;
     margin-bottom: 40px;
+	background: #fc0;
 }
 .main-head-wrapper .container{
 	padding: 150px 0;
