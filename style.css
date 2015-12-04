@@ -56,7 +56,10 @@ tbody,tfoot,thead,tr,th,td{
 body{
 	line-height:1;
 	color:rgba(0, 0, 0, 0.8);
-	font-family: 'Lato'
+	font-family: 'Lato';
+	padding:0;
+	border:0;
+	margin:0;
 }
 h1{
 	font-size:36px;
@@ -215,6 +218,7 @@ div#site-description{
 .navbar-default{
 	background: #fff;
 	border: none;
+	margin: 0;
 }
 .navbar.navbar-default li{
 	padding: 0;
@@ -257,7 +261,6 @@ div#site-description{
     background-attachment: fixed;
     background-position: center;
     margin-bottom: 40px;
-	background: #fc0;
 }
 .main-head-wrapper .container{
 	padding: 150px 0;
