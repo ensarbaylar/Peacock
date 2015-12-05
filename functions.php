@@ -111,7 +111,7 @@ function peacock_header()
 		<p class="meta"><?php peacock_posted_on(); ?></p>
 	</section>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
-        <div class="container">
+        <div class="main-head-holder">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading cta-header">
@@ -133,7 +133,7 @@ function peacock_header()
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 	?>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
-        <div class="container">
+        <div class="main-head-holder">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading cta-header">
@@ -162,7 +162,7 @@ function peacock_header()
 	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
 	<?php } ?>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
-        <div class="container">
+        <div class="main-head-holder">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading cta-header">
@@ -189,7 +189,7 @@ function peacock_header()
 	<?php $headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg'; ?>
 	<?php } ?>
     <header class="main-head-wrapper" style="background-color: #dedede; background-image: url('<?php echo $headerimg; ?>')">
-        <div class="container">
+        <div class="main-head-holder">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading cta-header">

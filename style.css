@@ -302,10 +302,15 @@ div#site-description{
     background-position: center;
     margin-bottom: 40px;
 }
-.main-head-wrapper .container{
+.main-head-wrapper .main-head-holder{
 	padding: 150px 0;
 	background: rgba(0,0,0,0.4);
 	width: 100%;
+	margin: 0;
+}
+.main-head-wrapper .main-head-holder .row{
+	padding: 0;
+	margin: 0;
 }
 .main-head-wrapper .cta-header h1{
 	font-size: 25px;
@@ -328,10 +333,14 @@ div#site-description{
 	background-repeat: no-repeat;
     background-position: center;
 }
-.summary-head-wrapper .container{
+.summary-head-wrapper .main-head-holder{
 	padding: 100px 0;
 	background: rgba(0,0,0,0.4);
 	width: 100%;
+}
+.summary-head-wrapper .main-head-holder .row{
+	margin: 0;
+	padding: 0;
 }
 .summary-head-wrapper .cta-header h2{
 	font-size: 25px;
@@ -380,4 +389,29 @@ li.comment{
 }
 /* Comments End */
 
-
+/* Siderbar Start */
+.sidebar-widgets-holder{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.widget-container{
+	padding: 0;
+	margin: 15px 0;
+}
+.widget-title{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.widget-container ul{
+	list-style: none;
+}
+#footer #copyright{
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+/* Siderbar End */
