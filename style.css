@@ -12,7 +12,6 @@ Text Domain: peacock
 Peacock WordPress Theme © 2015 Tizy
 Peacock is distributed under the terms of the GNU GPL
 */
-
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,center,fieldset,form,label,legend,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
 	font-size:100%;
 	font:inherit;
@@ -86,6 +85,37 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+blockquote,q{
+	display: inline-block;
+	background: #dedede;
+	quotes:none;
+	border-left:5px solid #404040;
+	padding: 10px 10px 10px 20px;
+	margin: 10px 0;
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none
+}
+table{
+	/*
+	border-collapse:collapse;
+	border-spacing:0
+	*/
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+	display:block
+}
+.sticky{}
+.bypostauthor{}
+.wp-caption{}
+.wp-caption-text{}
+.gallery-caption{}
+.alignright{}
+.alignleft{}
+.aligncenter{}
+
+/* Wordpress Standarts Start */
 .alignnone {
     margin: 5px 20px 20px 0;
 }
@@ -175,39 +205,10 @@ a img.aligncenter {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
-blockquote,q{
-	display: inline-block;
-	background: #dedede;
-	quotes:none;
-	border-left:5px solid #404040;
-	padding: 10px 10px 10px 20px;
-	margin: 10px 0;
-}
-blockquote:before,blockquote:after,q:before,q:after{
-	content:'';
-	content:none
-}
-table{
-	/*
-	border-collapse:collapse;
-	border-spacing:0
-	*/
-}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
-	display:block
-}
 .clear{
 	clear:both
 }
-.sticky{}
-.bypostauthor{}
-.wp-caption{}
-.wp-caption-text{}
-.gallery-caption{}
-.alignright{}
-.alignleft{}
-.aligncenter{}
-
+/* Wordpress Standarts End */
 
 /* Header Start */
 div#site-description{
@@ -252,6 +253,45 @@ div#site-description{
     border:1px solid #ccc;
 }
 /* Header End */
+
+/* Content Css Start */
+
+.site-container{
+	width: 100%;
+	max-width: 700px;
+	padding: 0;
+	margin: auto;
+}
+.header-blocks{
+	display: inline-block;
+	padding: 0 5px;
+	margin: 0;
+	float: left;
+	height: 100%;
+}
+.author-header-avatar img{
+	width: 50px;
+	height: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.author-header-url{
+	height: 25px;
+	display: inline-block;
+	padding: 0;
+	padding-top: 5px;
+	margin: 0;
+}
+.posted-on{
+	height: 25px;
+	width: 100%;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.entry-summary{
+	padding:15px 0;
+}
 .main-head-wrapper{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -306,39 +346,38 @@ div#site-description{
 	width: 100%;
 	font-weight: 700;
 }
-.site-container{
-	width: 100%;
-	max-width: 700px;
-	padding: 0;
-	margin: auto;
-}
-.header-blocks{
+.nav-previous, .nav-next{
 	display: inline-block;
-	padding: 0 5px;
-	margin: 0;
+	width: 50%;
 	float: left;
-	height: 100%;
 }
-.author-header-avatar img{
-	width: 50px;
-	height: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-.author-header-url{
-	height: 25px;
+.nav-next{
 	display: inline-block;
-	padding: 0;
-	padding-top: 5px;
-	margin: 0;
+	width: 50%;
+	float: left;
+	text-align: right;
 }
-.posted-on{
-	height: 25px;
-	width: 100%;
-	display: block;
-	padding: 0;
-	margin: 0;
+.navigation.site-container{
+	padding: 20px 0;
 }
-.entry-summary{
-	padding:15px 0;
+/* Content Css End */
+
+/* Comments Start */
+.site-container#comments{
+	margin-top: 20px;
+	padding-left: 10px;
 }
+li.comment{
+	list-style: none;
+	padding: 10px 5px;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	margin-right: -6px;
+}
+.comment .avatar{
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+/* Comments End */
+
+

@@ -1,5 +1,5 @@
 <?php if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return; ?>
-<section id="comments">
+<section class="site-container" id="comments">
 <?php 
 if ( have_comments() ) : 
 global $comments_by_type;
