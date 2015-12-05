@@ -117,7 +117,7 @@ function peacock_header()
                     <div class="post-heading cta-header">
                         <h1><?php single_post_title(); ?></h1>
 			<?php if ( function_exists( 'the_subtitle' ) ) {
-				the_subtitle( '<h2 class="subheading">', '</h2>' );
+				the_subtitle( '<p class="subheading">', '</p>' );
 			} ?>
                     </div>
                 </div>
@@ -140,7 +140,7 @@ function peacock_header()
                         <h1><?php single_post_title(); ?></h1>
                         <hr class="small">
 			<?php if ( function_exists( 'the_subtitle' ) ) {
-				the_subtitle( '<span class="subheading">', '</span>' );
+				the_subtitle( '<p class="subheading">', '</p>' );
 			} ?>
                     </div>
 					<!-- /.site-heading -->
@@ -168,7 +168,7 @@ function peacock_header()
                     <div class="site-heading cta-header">
                         <h1><?php esc_html_e( 'Search Results', 'peacock' ); ?></h1>
                         <hr class="small">
-                        <span class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></span>
+                        <p class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></p>
                     </div>
 		    <!-- /.site-heading -->
                 </div>
@@ -194,15 +194,15 @@ function peacock_header()
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading cta-header">
 			<?php if (get_theme_mod('peacock_homemain_title') !='') { ?>
-			<h1 class="homeintro"><?php echo get_theme_mod( 'peacock_homemain_title' ); ?></h1>
+			<h2 class="homeintro"><?php echo get_theme_mod( 'peacock_homemain_title' ); ?></h2>
 			<?php } else { ?>
-                        <h1><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h1>
+                        <h2><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h2>
 			<?php } ?>
                         <hr class="small">
 			<?php if (get_theme_mod('peacock_homemain_subtitle') !='') { ?>
-                        <span class="subheading"><?php echo get_theme_mod( 'peacock_homemain_subtitle' ); ?></span>
+                        <p class="subheading"><?php echo get_theme_mod( 'peacock_homemain_subtitle' ); ?></p>
 			<?php } else { ?>
-                        <span class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></span>
+                        <p class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></p>
 			<?php } ?>
                     </div>
 		    <!-- /.site-heading -->

@@ -312,7 +312,7 @@ div#site-description{
 	padding: 0;
 	margin: 0;
 }
-.main-head-wrapper .cta-header h1{
+.main-head-wrapper .cta-header h1, .main-head-wrapper .cta-header h2{
 	font-size: 25px;
 	color: #fff;
 	text-align: center;
@@ -324,6 +324,8 @@ div#site-description{
 	text-align: center;
 	width: 100%;
 	font-weight: 700;
+	padding: 0;
+	margin: 0;
 }
 .summary-head-wrapper{
 	-webkit-background-size: cover;
