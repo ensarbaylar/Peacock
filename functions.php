@@ -159,7 +159,7 @@ function peacock_header()
 	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
 	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
 	<?php } else { ?>
-	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
+	<?php $headerimg = get_theme_mod( 'peacock_mainheader_image' ); ?>
 	<?php } ?>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
         <div class="main-head-holder">
@@ -183,24 +183,24 @@ function peacock_header()
 	
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
-	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
+	<?php if (get_theme_mod('peacock_mainheader_image') !='') { ?>
+	<?php $headerimg = get_theme_mod( 'peacock_mainheader_image' ); ?>
 	<?php } else { ?>
-	<?php $headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg'; ?>
+	<?php $headerimg = get_template_directory_uri() . '/assests/img/bg-default.jpg'; ?>
 	<?php } ?>
     <header class="main-head-wrapper" style="background-color: #dedede; background-image: url('<?php echo $headerimg; ?>')">
         <div class="main-head-holder">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading cta-header">
-			<?php if (get_theme_mod('peacock_homemain_title') !='') { ?>
-			<h2 class="homeintro"><?php echo get_theme_mod( 'peacock_homemain_title' ); ?></h2>
+			<?php if (get_theme_mod('peacock_mainheader_title') !='') { ?>
+			<h2 class="homeintro"><?php echo get_theme_mod( 'peacock_mainheader_title' ); ?></h2>
 			<?php } else { ?>
                         <h2><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h2>
 			<?php } ?>
                         <hr class="small">
-			<?php if (get_theme_mod('peacock_homemain_subtitle') !='') { ?>
-                        <p class="subheading"><?php echo get_theme_mod( 'peacock_homemain_subtitle' ); ?></p>
+			<?php if (get_theme_mod('peacock_mainheader_subtitle') !='') { ?>
+                        <p class="subheading"><?php echo get_theme_mod( 'peacock_mainheader_subtitle' ); ?></p>
 			<?php } else { ?>
                         <p class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></p>
 			<?php } ?>
@@ -259,3 +259,8 @@ function peacock_posted_on() {
 	echo '<section class="site-container"><div class="header-blocks">' . $author_avatar . '</div><div class="header-blocks">' .  $byauthor . '<span class="posted-on">' . $posted_on . '</span></div></section><div class="clearfix"></div>'; // WPCS: XSS OK.
 
 }
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
