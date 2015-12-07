@@ -9,7 +9,6 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 <header id="header" role="banner">
-	
 	<!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-static-top">
         <div class="container-fluid">
