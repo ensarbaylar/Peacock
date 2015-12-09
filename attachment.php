@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php global $post; ?>
-<section id="content" role="main">
+<section class="site-container" id="content" role="main">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <header class="header">
 <h1 class="entry-title"><?php the_title(); ?> <span class="meta-sep">|</span> <a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php printf( __( 'Return to %s', 'peacock' ), esc_html( get_the_title( $post->post_parent ), 1 ) ); ?>" rev="attachment"><span class="meta-nav">&larr; </span><?php echo get_the_title( $post->post_parent ); ?></a></h1> <?php edit_post_link(); ?>
