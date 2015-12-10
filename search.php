@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="content" role="main">
+<section class="site-container" id="content" role="main">
 <?php if ( have_posts() ) : ?>
 <header class="header">
 <h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'peacock' ), get_search_query() ); ?></h1>

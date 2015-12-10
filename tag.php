@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="content" role="main">
+<section class="site-container" id="content" role="main">
 <header class="header">
 <h1 class="entry-title"><?php _e( 'Tag Archives: ', 'peacock' ); ?><?php single_tag_title(); ?></h1>
 </header>

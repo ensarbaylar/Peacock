@@ -1,10 +1,12 @@
 <?php
+/* Setup theme */
 add_action( 'after_setup_theme', 'peacock_setup' );
 function peacock_setup()
 {
 	load_theme_textdomain( 'peacock', get_template_directory() . '/languages' );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( "automatic-feed-links" );
+	add_theme_support( "post-thumbnails" );
+	add_theme_support( "title-tag" );
 	
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 640;
@@ -15,8 +17,10 @@ function peacock_setup()
 
 	// Register Custom Navigation Walker
 	require_once('libs/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php');
+
 }
 
+/* Load css and javascript files */
 add_action( 'wp_enqueue_scripts', 'peacock_load_scripts' );
 function peacock_load_scripts()
 {
@@ -33,6 +37,7 @@ function peacock_load_scripts()
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 }
 
+/* Add Google Font:Lato */
 add_action('wp_print_styles', 'load_fonts');
 function load_fonts() {
 	wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,700');

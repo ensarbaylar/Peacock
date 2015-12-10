@@ -9,7 +9,7 @@
 
 	
 	/* Main Header */
-	wp.customize( 'cleanblog_homeintro_image', function( value ) {
+	wp.customize( 'peacock_mainheader_image', function( value ) {
 		value.bind( function( to ) {
 
 			0 === $.trim( to ).length ?
