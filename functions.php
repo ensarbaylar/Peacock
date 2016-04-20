@@ -3,11 +3,11 @@
 add_action( 'after_setup_theme', 'peacock_setup' );
 function peacock_setup()
 {
-	load_theme_textdomain( 'peacock', get_template_directory() . '/languages' );
-	add_theme_support( "automatic-feed-links" );
-	add_theme_support( "post-thumbnails" );
-	add_theme_support( "title-tag" );
-	
+	load_theme_textdomain( 'peacock' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'title-tag' );
+
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 640;
 
@@ -38,8 +38,8 @@ function peacock_load_scripts()
 }
 
 /* Add Google Font:Lato */
-add_action('wp_print_styles', 'load_fonts');
-function load_fonts() {
+add_action('wp_print_styles', 'peacock_load_fonts');
+function peacock_load_fonts() {
 	wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,700');
 	wp_enqueue_style( 'googleFonts');
 }
@@ -92,7 +92,7 @@ function peacock_comments_number( $count )
 {
 	if ( !is_admin() ) {
 		global $id;
-		$comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
+		$comments_by_type = separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
 		return count( $comments_by_type['comment'] );
 	} else {
 		return $count;
@@ -105,6 +105,7 @@ if( ! function_exists( 'peacock_header' ) ) :
  */
 function peacock_header() 
 {	
+	global $post;
 	if(is_single()) { ?>
 	
     <!-- Page Header -->
@@ -227,7 +228,7 @@ endif;
 
 function peacock_posted_on() {
 	
-	$author_id;
+	global $author_id;
 	if (is_singular()) {
 		$author_id = get_queried_object()->post_author;
 	}
