@@ -20,6 +20,18 @@ function peacock_setup()
 
 }
 
+/* Add title support for older versions */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+
+	function peacock_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
+	}
+	add_action( 'wp_head', 'peacock_render_title' );
+
+}
+
 /* Load css and javascript files */
 add_action( 'wp_enqueue_scripts', 'peacock_load_scripts' );
 function peacock_load_scripts()
@@ -35,13 +47,9 @@ function peacock_load_scripts()
 	wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ) );
 	/* Load Main JavaScript */
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
-}
 
-/* Add Google Font:Lato */
-add_action('wp_print_styles', 'peacock_load_fonts');
-function peacock_load_fonts() {
-	wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,700');
-	wp_enqueue_style( 'googleFonts');
+	/* Add Google Font:Lato */
+	wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,300,700');
 }
 
 add_action( 'comment_form_before', 'peacock_enqueue_comment_reply_script' );
