@@ -14,7 +14,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_section(
 		'peacock_mainheader_options',
 		array(
-			'title'     => 'Main Header Section',
+			'title'     => __( 'Main Header Section' , 'peacock' ),
 			'priority'  => 20
 		)
 	);
@@ -33,7 +33,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 			$wp_customize,
 			'peacock_mainheader_image',
 			array(
-			    'label'    => 'Background Image',
+			    'label'    => __( 'Background Image' , 'peacock' ),
 			    'settings' => 'peacock_mainheader_image',
 			    'section'  => 'peacock_mainheader_options'
 			)
@@ -44,7 +44,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'peacock_mainheader_title',
 		array(
-			'default'            => 'Wordpress With Peacock',
+			'default'            => __( 'Wordpress With Peacock'  , 'peacock' ),
 			'sanitize_callback'  => 'peacock_sanitize_input',
 			'transport'          => 'refresh'
 		)
@@ -53,7 +53,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 		'peacock_mainheader_title',
 		array(
 			'section'  => 'peacock_mainheader_options',
-			'label'    => 'Title',
+			'label'    => __( 'Title' , 'peacock' ),
 			'type'     => 'text'
 		)
 	);
@@ -62,7 +62,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'peacock_mainheader_subtitle',
 		array(
-			'default'            => 'Life is short',
+			'default'            => __( 'Life is short' , 'peacock' ),
 			'sanitize_callback'  => 'peacock_sanitize_input',
 			'transport'          => 'refresh'
 		)
@@ -71,7 +71,7 @@ function peacock_register_theme_customizer( $wp_customize ) {
 		'peacock_mainheader_subtitle',
 		array(
 			'section'  => 'peacock_mainheader_options',
-			'label'    => 'Subtitle',
+			'label'    => __( 'Subtitle' , 'peacock' ),
 			'type'     => 'text'
 		)
 	);

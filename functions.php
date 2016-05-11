@@ -119,7 +119,22 @@ function peacock_header()
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
 	<?php
-		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	
+		$post_thumbnail = get_post_thumbnail_id($post->ID);
+		
+		if( ! empty( $post_thumbnail ) ){
+		
+			$feat_image = wp_get_attachment_url(  );
+		
+		}elseif (get_theme_mod('peacock_mainheader_image') !='') {
+			
+			$feat_image = get_theme_mod( 'peacock_mainheader_image' );
+		
+		} else {
+			
+			$feat_image = get_template_directory_uri() . '/assests/img/bg-default.jpg';
+
+		}
 	?>
 	<section>
 		<p class="meta"><?php peacock_posted_on(); ?></p>
@@ -144,7 +159,21 @@ function peacock_header()
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
 	<?php
-		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		$post_thumbnail = get_post_thumbnail_id($post->ID);
+
+		if( ! empty( $post_thumbnail ) ){
+		
+			$feat_image = wp_get_attachment_url(  );
+		
+		}elseif (get_theme_mod('peacock_mainheader_image') !='') {
+			
+			$feat_image = get_theme_mod( 'peacock_mainheader_image' );
+		
+		} else {
+			
+			$feat_image = get_template_directory_uri() . '/assests/img/bg-default.jpg';
+
+		}
 	?>
     <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
         <div class="main-head-holder">

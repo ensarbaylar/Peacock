@@ -3,7 +3,7 @@ Contributors: salinus, ensar
 Tags: black, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.5
-Stable tag: 0.7
+Stable tag: 0.8.1
 License: GNU GPL
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -34,7 +34,13 @@ Source: https://github.com/twittem/wp-bootstrap-navwalker
 
 == Changelog ==
 
-= 0.5 =
+= 0.8 =
+* Small Bug fixes
+
+= 0.7 =
+* Small Bug fixes
+
+= 0.6 =
 * Small Bug fixes
 
 = 0.5 =
