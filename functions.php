@@ -20,18 +20,6 @@ function peacock_setup()
 
 }
 
-/* Add title support for older versions */
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-
-	function peacock_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'peacock_render_title' );
-
-}
-
 /* Load css and javascript files */
 add_action( 'wp_enqueue_scripts', 'peacock_load_scripts' );
 function peacock_load_scripts()
