@@ -1,9 +1,9 @@
 ﻿=== Peacock ===
 Contributors: salinus, ensar
-Tags: black, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, threaded-comments, translation-ready
-Requires at least: 4.0
+Tags: one-column, custom-menu, featured-images, threaded-comments, translation-ready
+Requires at least: 4.1
 Tested up to: 4.5
-Stable tag: 0.8.3
+Stable tag: 0.9
 License: GNU GPL
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -32,7 +32,15 @@ http://getbootstrap.com/
 WP Bootstrap Navwalker is fully open source and licenced with GNU GPL
 Source: https://github.com/twittem/wp-bootstrap-navwalker
 
+* normalize.css Is used to reset default browser css rules. It is distributed under MIT License
+github.com/necolas/normalize.css
+
 == Changelog ==
+
+= 0.9 =
+* Design Updates
+* Minor Bug fixes
+* Template parts moved in a separate folder
 
 = 0.8 =
 * Small Bug fixes
