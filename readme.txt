@@ -3,7 +3,7 @@ Contributors: salinus, ensar
 Tags: one-column, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.1
 Tested up to: 4.5
-Stable tag: 0.9
+Stable tag: 0.9.1
 License: GNU GPL
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -36,6 +36,9 @@ Source: https://github.com/twittem/wp-bootstrap-navwalker
 github.com/necolas/normalize.css
 
 == Changelog ==
+
+= 0.9.1 =
+* Custom Header support added
 
 = 0.9 =
 * Design Updates

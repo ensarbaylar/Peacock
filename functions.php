@@ -8,6 +8,17 @@ function peacock_setup()
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
 
+	$args = array(
+        'default-image'      => get_template_directory_uri() . 'assets/img/bg-default.jpg',
+        'default-text-color' => '000',
+        'width'              => 1200,
+        'height'             => 800,
+        'flex-width'         => true,
+        'flex-height'        => true,
+        'header-text'		 => false,
+    );
+    add_theme_support( 'custom-header', $args );
+
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 640;
 
@@ -97,162 +108,6 @@ function peacock_comments_number( $count )
 		return $count;
 	}
 }
-
-if( ! function_exists( 'peacock_header' ) ) :
-/*
- * Add the fullscreen Image To the top of the page
- */
-function peacock_header() 
-{	
-	global $post;
-	if(is_single()) { ?>
-	
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-	<?php
-	
-		$post_thumbnail = get_post_thumbnail_id($post->ID);
-		
-		if( ! empty( $post_thumbnail ) ){
-		
-			$feat_image = wp_get_attachment_url(  );
-		
-		}elseif (get_theme_mod('peacock_mainheader_image') !='') {
-			
-			$feat_image = get_theme_mod( 'peacock_mainheader_image' );
-		
-		} else {
-			
-			$feat_image = get_template_directory_uri() . '/assets/img/bg-default.jpg';
-
-		}
-	?>
-	<section>
-		<p class="meta"><?php peacock_posted_on(); ?></p>
-	</section>
-    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
-        <div class="main-head-holder">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading cta-header">
-                        <h1><?php single_post_title(); ?></h1>
-			<?php if ( function_exists( 'the_subtitle' ) ) {
-				the_subtitle( '<p class="subheading">', '</p>' );
-			} ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-	
-	<?php } elseif(is_page()) { ?>
-	
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-	<?php
-		$post_thumbnail = get_post_thumbnail_id($post->ID);
-
-		if( ! empty( $post_thumbnail ) ){
-		
-			$feat_image = wp_get_attachment_url(  );
-		
-		}elseif (get_theme_mod('peacock_mainheader_image') !='') {
-			
-			$feat_image = get_theme_mod( 'peacock_mainheader_image' );
-		
-		} else {
-			
-			$feat_image = get_template_directory_uri() . '/assets/img/bg-default.jpg';
-
-		}
-	?>
-    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $feat_image; ?>')">
-        <div class="main-head-holder">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading cta-header">
-                        <h1><?php single_post_title(); ?></h1>
-                        <hr class="small">
-			<?php if ( function_exists( 'the_subtitle' ) ) {
-				the_subtitle( '<p class="subheading">', '</p>' );
-			} ?>
-                    </div>
-					<!-- /.site-heading -->
-                </div>
-				<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
-            </div>
-			<!-- /.row -->
-        </div>
-		<!-- /.container -->
-    </header>
-	
-	<?php } elseif(is_search()) { ?>
-	
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-	<?php if (get_theme_mod('peacock_homepage_image') !='') { ?>
-	<?php $headerimg = get_theme_mod( 'peacock_homepage_image' ); ?>
-	<?php } else { ?>
-	<?php $headerimg = get_theme_mod( 'peacock_mainheader_image' ); ?>
-	<?php } ?>
-    <header class="main-head-wrapper" style="background-color: #404040; background-image: url('<?php echo $headerimg; ?>')">
-        <div class="main-head-holder">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading cta-header">
-                        <h1><?php esc_html_e( 'Search Results', 'peacock' ); ?></h1>
-                        <hr class="small">
-                        <p class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></p>
-                    </div>
-		    <!-- /.site-heading -->
-                </div>
-		<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
-            </div>
-	<!-- /.row -->
-        </div>
-	<!-- /.container -->
-    </header>
-	
-	<?php } else { ?>
-	
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-	<?php if (get_theme_mod('peacock_mainheader_image') !='') { ?>
-	<?php $headerimg = get_theme_mod( 'peacock_mainheader_image' ); ?>
-	<?php } else { ?>
-	<?php $headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg'; ?>
-	<?php } ?>
-    <header class="main-head-wrapper" style="background-color: #dedede; background-image: url('<?php echo $headerimg; ?>')">
-        <div class="main-head-holder">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading cta-header">
-			<?php if (get_theme_mod('peacock_mainheader_title') !='') { ?>
-			<h2 class="homeintro"><?php echo get_theme_mod( 'peacock_mainheader_title' ); ?></h2>
-			<?php } else { ?>
-                        <h2><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h2>
-			<?php } ?>
-                        <hr class="small">
-			<?php if (get_theme_mod('peacock_mainheader_subtitle') !='') { ?>
-                        <p class="subheading"><?php echo get_theme_mod( 'peacock_mainheader_subtitle' ); ?></p>
-			<?php } else { ?>
-                        <p class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></p>
-			<?php } ?>
-                    </div>
-		    <!-- /.site-heading -->
-                </div>
-		<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
-            </div>
-	    <!-- /.row -->
-        </div>
-	<!-- /.container -->
-    </header>
-
-	<?php } ?>
-	
-<?php 
-}
-endif;
 
 function peacock_posted_on() {
 	

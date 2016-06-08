@@ -52,4 +52,71 @@
     </nav>
 </header>
 <div id="container">
-	<?php peacock_header(); ?>
+	<?php
+	if( is_single() || is_page() ){
+
+		$post_thumbnail = get_post_thumbnail_id($post->ID);
+		
+		if( ! empty( $post_thumbnail ) ){
+		
+			$headerimg = wp_get_attachment_url( $post_thumbnail );
+		
+		}elseif ( get_header_image() ) {
+
+			$image = get_header_image();
+			$headerimg = esc_url( $image );
+
+		} else {
+			
+			$headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg';
+
+		}
+	}else{
+		if ( get_header_image() ) {
+
+			$image = get_header_image();
+			$headerimg = esc_url( $image );
+			
+		} else {
+			$headerimg = get_template_directory_uri() . '/assets/img/bg-default.jpg';
+		} 
+	}
+	?>
+	<!-- Page Header -->
+    <header class="main-head-wrapper" style="background-color: #dedede; background-image: url('<?php echo $headerimg; ?>')">
+        <div class="main-head-holder">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading cta-header">
+                    <?php if( is_single() || is_page() ): ?>
+	                    <h1><?php single_post_title(); ?></h1>
+						<?php if ( function_exists( 'the_subtitle' ) ) {
+                        	?><hr class="small"><?php
+							the_subtitle( '<p class="subheading">', '</p>' );
+						} ?>
+					<?php elseif( is_search() ):?>
+						<h1><?php esc_html_e( 'Search Results', 'peacock' ); ?></h1>
+                        <hr class="small">
+                        <p class="subheading"><?php printf( esc_html__( 'You searched for: "%s"', 'peacock' ), '<span>' . get_search_query() . '</span>' ); ?></p>
+					<?php else:?>
+						<?php if (get_theme_mod('peacock_mainheader_title') !='') { ?>
+						<h2 class="homeintro"><?php echo get_theme_mod( 'peacock_mainheader_title' ); ?></h2>
+						<?php } else { ?>
+			                        <h2><?php esc_html_e( 'Wordpress With Peacock', 'peacock' ); ?></h2>
+						<?php } ?>
+			                        <hr class="small">
+						<?php if (get_theme_mod('peacock_mainheader_subtitle') !='') { ?>
+			                        <p class="subheading"><?php echo get_theme_mod( 'peacock_mainheader_subtitle' ); ?></p>
+						<?php } else { ?>
+			                        <p class="subheading"><?php esc_html_e( 'Life is short', 'peacock' ); ?></p>
+						<?php } ?>
+					<?php endif;?>
+                    </div>
+		    <!-- /.site-heading -->
+                </div>
+		<!-- /.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1 -->
+            </div>
+	    <!-- /.row -->
+        </div>
+	<!-- /.container -->
+    </header>

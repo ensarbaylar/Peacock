@@ -19,27 +19,6 @@ function peacock_register_theme_customizer( $wp_customize ) {
 		)
 	);
 	
-	/* Background Image */
-	$wp_customize->add_setting(
-		'peacock_mainheader_image',
-		array(
-		    'default'     		 => get_template_directory_uri() . '/assets/img/bg-default.jpg',
-			'sanitize_callback'  => 'peacock_sanitize_input',
-		    'transport'   		 => 'refresh'
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'peacock_mainheader_image',
-			array(
-			    'label'    => __( 'Background Image' , 'peacock' ),
-			    'settings' => 'peacock_mainheader_image',
-			    'section'  => 'peacock_mainheader_options'
-			)
-		)
-	);
-	
 	/* Home Cta Title */
 	$wp_customize->add_setting(
 		'peacock_mainheader_title',
