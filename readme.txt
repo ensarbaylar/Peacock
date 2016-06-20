@@ -2,15 +2,19 @@
 Contributors: salinus, ensar
 Tags: one-column, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.1
-Tested up to: 4.5
-Stable tag: 0.9.1
+Tested up to: 4.5.2
+Stable tag: 0.9.2
 License: GNU GPL
 License URI: https://www.gnu.org/licenses/gpl.html
 
 Peacock is a simple and clear design wordpress theme.
 
 == Description ==
-Peacock is a simple and clear design wordpress theme. It has a big featured image on top of every page. Usign Twitter Bootstrap it offers responsive layout on mobile devices too.
+Peacock is a simple and clear design wordpress theme. What makes Peacock beautiful is the big header image. Header image is picked from post thumbnail if any exists. You can also set a default featured image to use where post thumbnail is missing. Peacock also uses Twitter Bootstrap and it offers responsive layout on mobile devices. Sidebar is located beneath the page content so visitors can read without distraction. Distraction free content makes it perfect for bloggers.
+
+* Responsive Layout
+* Custom Header
+* Post Formats
 
 == Installation ==
 
