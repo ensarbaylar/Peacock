@@ -10,6 +10,7 @@
 			<nav id="comments-nav-above" class="comments-navigation" role="navigation">
 				<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
 			</nav>
+			<?php endif; ?>
 	<?php endif; ?>
 	<ul>
 		<?php wp_list_comments( 'type=comment' ); ?>

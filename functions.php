@@ -50,7 +50,7 @@ function peacock_load_scripts()
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 
 	/* Add Google Font:Lato */
-	wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,300,700');
+	wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext');
 }
 
 add_action( 'comment_form_before', 'peacock_enqueue_comment_reply_script' );
